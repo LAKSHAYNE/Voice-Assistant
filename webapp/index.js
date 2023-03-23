@@ -40,4 +40,5 @@ app.post("/register", (req, res) => {
   newdata.save();
   res.send("Thank you");
 });
-app.listen("3000", () => console.log("Server is running"));
+const port = process.env.PORT || 3001;
+app.listen(port, () => console.log("Server is running"));
