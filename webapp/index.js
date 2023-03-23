@@ -21,7 +21,16 @@ const userSchema = mongoose.Schema({
   password: String,
 });
 const userS = mongoose.model("users", userSchema);
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 app.get("/register", (req, res) => {
+  res.sendFile(__dirname + "/register.html");
+});
+app.get("/thankyou", (req, res) => {
+  res.sendFile(__dirname + "/thankyou.html");
+});
+app.post("/toregister", (req, res) => {
   res.sendFile(__dirname + "/register.html");
 });
 app.post("/register", (req, res) => {
@@ -38,7 +47,7 @@ app.post("/register", (req, res) => {
     password: pass,
   });
   newdata.save();
-  res.send("Thank you");
+  res.sendFile(__dirname + "/thankyou.html");
 });
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log("Server is running"));
