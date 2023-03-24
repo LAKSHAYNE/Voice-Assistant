@@ -38,10 +38,7 @@ app.post("/register", (req, res) => {
   if (req.body.cpass != req.body.pass) {
     res.send("Password didn't match please retry");
   }
-  const pass = crypto
-    .createHash("sha256")
-    .update(process.env.SECRET)
-    .digest("hex");
+  const pass = crypto.createHash("sha256").update(req.body.pass).digest("hex");
   const newdata = new userS({
     email: req.body.email,
     password: pass,

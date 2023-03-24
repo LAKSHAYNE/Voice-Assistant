@@ -5,7 +5,6 @@ from gtts import gTTS  # google text to speech
 import os  # to save/open files
 import wolframalpha  # to calculate strings into formula
 import time
-from assi_text import *
 from gui import *
 
 
