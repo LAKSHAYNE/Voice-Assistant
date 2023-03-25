@@ -1,8 +1,10 @@
 import pymongo
 import hashlib
+from loginGui import *
+from commands import *
 
 
-class dbconnect:
+class dbconnect(LoginGui):
     def __init__(self) -> None:
         try:
             client = pymongo.MongoClient(
@@ -14,18 +16,20 @@ class dbconnect:
             print("Successfully connected to database")
         except:
             print("Unable to connect to database")
+        LoginGui.__init__(self, self.find)
 
-    def find(self, email, password):
+    def find(self):
+        # print('innnnn')
+        email = self.emailInput.get()
+        password = self.passInput.get()
+        # print(email, password)
         hashpass = hashlib.sha256(password.encode('utf-8')).hexdigest()
-        print(hashpass)
         x = self.col.find_one({"email": email, "password": hashpass})
         if (x):
-            return ('Found')
+            print('user found')
+            self.app.destroy()
+            Commands()
         else:
+            print('no user')
+            self.update()
             return ('Not Found')
-
-
-if __name__ == '__main__':
-    ob = dbconnect()
-
-    print(ob.find('weeknd@hxp.com', 'lakshay1234'))

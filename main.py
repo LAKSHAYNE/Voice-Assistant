@@ -1,4 +1,4 @@
-from commands import *
+from dbconnect import *
 
 if __name__ == "__main__":
-    ob = Commands()
+    ob = dbconnect()
