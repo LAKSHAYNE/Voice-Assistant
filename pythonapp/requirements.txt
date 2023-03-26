@@ -1,0 +1,8 @@
+customtkinter==5.1.2
+gTTS==2.2.4
+Pillow==9.4.0
+playsound==1.2.2
+pymongo==4.3.3
+pywhatkit==5.4
+SpeechRecognition==3.8.1
+wolframalpha==5.0.0
