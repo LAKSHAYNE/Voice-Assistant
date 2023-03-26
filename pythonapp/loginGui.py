@@ -2,6 +2,7 @@ from tkinter import *
 import customtkinter
 import webbrowser
 from PIL import ImageTk, Image
+import os
 
 
 class LoginGui:
@@ -9,7 +10,8 @@ class LoginGui:
         self.app = customtkinter.CTk()
         self.app.geometry("300x500")
         self.app.title("Voice Assist Login Page")
-        resized = Image.open("logo.jpeg").resize((100, 100), Image.ANTIALIAS)
+        resized = Image.open('logo.jpeg').resize(
+            (100, 100), Image.ANTIALIAS)
         img = ImageTk.PhotoImage(resized)
         imgframe = Frame(master=self.app, width=100, height=100)
         imgframe.pack(pady=5, padx=2)
