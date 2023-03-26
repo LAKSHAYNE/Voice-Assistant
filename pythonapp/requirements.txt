@@ -6,3 +6,4 @@ pymongo==4.3.3
 pywhatkit==5.4
 SpeechRecognition==3.8.1
 wolframalpha==5.0.0
+pyaudio
