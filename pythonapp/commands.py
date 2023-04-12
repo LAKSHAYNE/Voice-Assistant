@@ -66,7 +66,7 @@ class Commands(Gui):
                 return
 
             elif "who made you" in input or "created you" in input:
-                speak = "I have been created by Group-9 members which comprise of Ishwam Lakshay Ishika and Mani."
+                speak = "I have been created by Group-9 members which comprise of Harsh Lakshay Ginni and Mani."
                 self.assistant_speaks(speak)
                 return
 
